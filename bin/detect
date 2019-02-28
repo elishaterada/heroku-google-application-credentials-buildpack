@@ -1,0 +1,4 @@
+#!/bin/sh
+
+echo "Google Cloud"
+exit 0
