@@ -5,17 +5,7 @@ BUILD_DIR=${1:-}
 CACHE_DIR=${2:-}
 ENV_DIR=${3:-}
 
-cd $BUILD_DIR
-
-if [ -f $ENV_DIR/GOOGLE_CREDENTIALS ]
-then
-
-echo "------> Generating google-credentials.json"
-
-cat $ENV_DIR/GOOGLE_CREDENTIALS >> $BUILD_DIR/google-credentials.json
-
-else
-
-echo "------> Missing value in GOOGLE_CREDENTIALS"
-
-fi
+echo "------> Generating .profile.d file to generate google-credentials.json at startup"
+mkdir -p $BUILD_DIR/.profile.d
+echo "echo ${GOOGLE_CREDENTIALS@Q} > /app/google-credentials.json" > $BUILD_DIR/.profile.d/google-credentials.sh
+chmod +x $BUILD_DIR/.profile.d/google-credentials.sh
