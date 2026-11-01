@@ -1,3 +1,7 @@
+> **Deprecated — no longer maintained**
+>
+> This buildpack is retired. Do not use it for new projects or new deployments. No further updates, bug fixes, or security fixes are planned. The source remains available for existing deployments and historical reference.
+
 # heroku-google-application-credentials-buildpack
 Generates a Google credential file based on Heroku Config Vars.
 
